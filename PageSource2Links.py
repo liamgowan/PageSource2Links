@@ -18,9 +18,8 @@ print ("Processing...\n\n")
 #read lines, extract data
 line = infile.readline()
 while line != "":
-    allLinks.append(line[51:223]) #read in where the needed text for link is
-    for i in range(12):           #skip next 12 lines
-        line = infile.readline()
+    if("https://lh3.googleusercontent.com" in line): #Assess line validity
+        allLinks.append(line[51:223]) #append where the needed text for link is
     line = infile.readline()
 infile.close()
 
